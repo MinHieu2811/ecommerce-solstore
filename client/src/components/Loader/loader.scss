@@ -1,0 +1,57 @@
+@import '../../index.scss';
+
+.loader-wrapper{
+    // min-height: 80vh;
+    // margin-top: 50vh;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+
+    .loader{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+    .spinner{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: auto;
+    
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            border-radius: inherit;
+        }
+    
+        &::before{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(0deg, $main-color 0%, #efeded 100%);
+            animation: spin .5s infinite linear;
+        }
+    
+        &::after{
+            width: 85%;
+            height: 85%;
+            background-color: $bg-slide;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        @keyframes spin{
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    }
+}

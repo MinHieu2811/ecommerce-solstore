@@ -1,0 +1,27 @@
+@import '../../index.scss';
+
+.paginate-wrapper{
+    width: 100%;
+    @include flex(center, center);
+
+    &_link{
+        width: 25px;
+        height: 25px;
+        @include flex(center, center);
+        background-color: $main-bg;
+        padding: 10px;
+
+        border: 1px solid $main-color;
+        margin: 0 5px;
+        transition: all 0.2s ease-in-out;
+
+        &.active{
+            background-color: $main-color;
+            color: $main-bg;
+        }
+
+        &:hover{
+            transform: translateY(-5px);
+        }
+    }
+}

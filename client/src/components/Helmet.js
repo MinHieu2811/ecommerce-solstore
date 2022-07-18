@@ -1,0 +1,23 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+const Helmet = props => {
+
+    document.title = "SolStore - " + props.title;
+
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
+    return (
+        <>
+            {props.children}
+        </>
+    )
+}
+
+Helmet.propTypes = {
+    title: PropTypes.string.isRequired
+}
+
+export default Helmet

@@ -1,0 +1,71 @@
+@import '../../index.scss';
+
+.productlist-wrapper{
+    margin: 120px 50px 50px 50px;
+    min-height: 80vh;
+
+    .productlist-header{
+        text-transform: capitalize;
+        @include flex(center, space-between);
+    }
+
+    .productlist-content{
+        &_table{
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            thead{
+                tr{
+                    th{
+                        border: 1px solid $main-color;
+                        padding: 10px;
+                    }
+                }
+            }
+            th {
+                 border-bottom: 1px solid $main-color;
+             }
+            tr{
+                td{
+                    padding: 10px;
+                    border: 1px solid $main-color;
+                    text-align: center;
+                    &:first-child{
+                        width: 50%;
+                    }
+                        
+                }
+            }
+        }
+    }
+}
+
+
+.btn-link{
+    background-color: $main-color;
+    color: $main-bg;
+    border: 0;
+    outline: 0;
+    padding: 2px;
+    margin: 0 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: $main-color-hover;
+    }
+}
+
+.btn-create{
+    background-color: $main-color;
+    color: $main-bg;
+    border: 0;
+    outline: 0;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin: 0 5px;
+    cursor: pointer;
+    
+    &:hover{
+        background-color: $main-color-hover;
+    }
+}

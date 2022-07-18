@@ -1,0 +1,31 @@
+@import '../../index.scss';
+
+.user-edit-wrapper{
+    margin: 120px 50px 50px 50px;
+    min-height: 80vh;
+     .form-group{
+         margin: 0px;
+
+         &_checkbox{
+             margin-bottom: 20px;
+             @include flex(center, flex-start);
+
+             input.checkbox{
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                outline: 0;
+             }
+         }
+     }
+
+     .btn-link{
+            margin: 0px;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            &:hover{
+                background-color: $main-color-hover;
+            }
+     }
+}

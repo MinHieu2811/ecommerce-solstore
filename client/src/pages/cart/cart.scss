@@ -1,0 +1,167 @@
+@import '../../index.scss';
+
+.cart{
+    height: 100vh;
+    margin: 50px;
+    @include flex(flex-start, flex-start);
+
+    @include mobile {
+        flex-wrap: wrap;
+    }
+
+    &_info{
+        margin-right: 30px;
+        margin-top: 30px;
+        padding: 20px;
+        position: sticky;
+        top: calc(90px + 20px);
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        background-color: $bg-slide;
+        
+
+        @include mobile{
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+            position: unset;
+        }
+
+        &_text{
+
+            p{
+                text-transform: uppercase;
+                font-family: 'Oswald';
+            }
+        }
+
+        &_txt{
+            & > * {
+                margin-bottom: 10px;
+            }
+
+            p{
+                font-size: 1.25rem;
+            }
+
+            &_price{
+                @include flex(center, space-between);
+                padding: 10px 0;
+                font-size: 1.25rem;
+
+                span:first-child{
+                    text-transform: uppercase;
+                    font-family: 'Oswald';
+                }
+
+                span:nth-child(2){
+                    font-size: 2rem;
+                    color: $main-color;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &_btn > * {
+            margin-bottom: 20px;
+        }
+    }
+
+    &_list{
+        flex-grow: 1;
+    }
+
+    &_item{
+        @include flex(center, flex-start);
+        margin-bottom: 20px;
+        border-bottom: 1px solid $main-color;
+
+        &_image{
+            margin-right: 20px;
+            max-width: 170px;
+            max-height: 150px;
+
+            img{
+                height: 150px;
+            }
+        }
+
+        &_info{
+            @include flex(center, space-between);
+            flex-grow: 1;
+
+            @include mobile{
+                @include flex(flex-start, center);
+                flex-direction: column;
+
+                & > * {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .product_info_item_quantity{
+                width: 50px;
+
+                select{
+                    border: 1px solid $main-color;
+                }
+            }
+
+            &_name{
+                width: 40%;
+
+                @include mobile{
+                    width: 100%;
+                }
+            }
+
+            &_discount{
+                font-size: 1.2rem;
+            }
+
+            &_price{
+                font-size: 1.2rem;
+            }
+
+            &_txt_price,
+            &_name{
+                font-size: 1.25rem;
+                text-transform: uppercase;
+            }
+
+            &_del{
+                font-size: 1.5rem;
+
+                i{
+                    cursor: pointer;
+
+                    &:hover{
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+button.btn-cart{
+    padding: 5px 7px;
+    background-color: $main-color;
+    color: $main-bg;
+
+    border: 2px solid $main-color;
+    outline: none;
+
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include mobile{
+        margin: 10px;
+    }
+
+    &:hover{
+        background-color: $main-color-hover;
+    }
+
+}

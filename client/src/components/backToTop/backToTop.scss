@@ -1,0 +1,29 @@
+@import '../../index.scss';
+
+.back-to-top-btn {
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    font-size: 2rem;
+    transition: transform 0.5s ease-in-out;
+    color: $main-bg;
+    background-color: $main-color;
+    border-radius: 5px;
+
+    @include flex(center, center);
+
+    &.active{
+        transform: translateY(80vh);
+    }
+
+    &:hover{
+        background-color: $main-color-hover;
+        color: $bg-slide;
+    }
+}

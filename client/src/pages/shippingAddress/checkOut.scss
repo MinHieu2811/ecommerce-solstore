@@ -1,0 +1,118 @@
+@import '../../index.scss';
+
+.checkOut-wrapper {
+  // height: calc(100vh - $head-height);
+  margin: 120px;
+
+  @include flex(center, space-between);
+
+  @include tablet{
+      flex-direction: column-reverse;
+  }
+
+  .form-wrapper {
+    padding: 20px;
+    // box-shadow: 1px 3px 15px 5px rgba(0, 0, 0, 0.45);
+    margin: 20px;
+
+    &_title {
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+
+    &_container_input {
+      border: 1px solid $main-color;
+      outline: none;
+      padding: 8px 8px;
+      margin: 10px 0;
+    }
+
+    &_container_btn {
+      border: 0;
+      outline: 0;
+      background-color: $main-color;
+      color: $main-bg;
+      margin: 20px 0;
+
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      padding: 5px 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $main-color-hover;
+      }
+    }
+
+    &_container_choice {
+      @include flex(center, flex-start);
+      width: 100%;
+
+      &_item {
+        @include flex(center, flex-start);
+        flex-direction: row;
+        margin-right: 10px;
+        
+        .radio{
+            margin-right: 5px;
+        }
+      }
+    }
+
+    .textarea{
+        resize: none;
+    }
+  }
+
+  .productInfo-container{
+    padding: 20px;
+    box-shadow: 1px 3px 15px 5px rgba(0, 0, 0, 0.45);
+    height: 500px;
+    @include flex(flex-start, space-between);
+    flex-direction: column;
+
+    .productInfo-wrapper{
+      width: 100%;
+      height: fit-content;
+
+      &_item{
+        margin: 0 10px;
+        border-bottom: 1px solid $main-color-hover;
+        @include flex(center, space-between);
+
+        .left{
+          @include flex(center, flex-start);
+        }
+
+        &_img{
+            width: 75px;
+            height: 75px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        &_title{
+
+          .title{
+            margin-right: 10px
+          }
+        }
+
+        .right{
+          @include flex(center, flex-end);
+        }
+    }
+    }
+    
+  }
+
+  .totalPrice{
+    width: 100%;
+    font-size: 2rem;
+    color: $main-color;
+    border-top: 2px solid $main-color;
+    text-transform: uppercase;
+    text-align: end;
+  }
+}
