@@ -27,7 +27,7 @@ const Cart = () => {
   const { userInfo } = userLogin;
 
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { loading, success: successOrderCreate, order, error } = orderCreate;
+  const { success: successOrderCreate } = orderCreate;
 
   console.log(successOrderCreate)
 
@@ -47,6 +47,7 @@ const Cart = () => {
     if (productId) {
       dispatch(addToCart(productId.id, productInfo.search.split("=")[1]));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, productId.id, productInfo.search.split("=")[1]]);
 
   const handleBack = () => {
@@ -78,18 +79,18 @@ const Cart = () => {
         }}>
           
           <div className="cart_info_text">
-            <p>Bạn đang có {totalProducts} sản phẩm trong giỏ hàng</p>
+            <p>You have {totalProducts} in your cart</p>
             <div className="cart_info_txt_price">
-              <span>Thành tiền</span>
+              <span>Total</span>
               <span>${totalPrice.toFixed(2)}</span>
             </div>
           </div>
           <div className="cart_info_btn">
             <Link to="/checkout">
-              <button className="btn-cart">Đặt hàng</button>
+              <button className="btn-cart">Checkout</button>
             </Link>
             <Link to="/category">
-              <button className="btn-cart">Tiếp tục mua hàng</button>
+              <button className="btn-cart">Continue shopping</button>
             </Link>
           </div>
         </motion.div>

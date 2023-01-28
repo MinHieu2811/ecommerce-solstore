@@ -15,3 +15,5 @@ const connect = async () => {
 }
 
 export default connect;
+
+// mongodb+srv://minHieu:minHIeu@cluster0.ihp26.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
