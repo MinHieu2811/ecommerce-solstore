@@ -13,15 +13,11 @@ const OrderList = () => {
     const orderList = useSelector(state => state.orderList);
     const { loading, error, orders} = orderList;
 
-    console.log(orders);
-
     const userLogin = useSelector(state => state.userLogin);
     const { userInfo} = userLogin;
 
-    const orderDetails = useSelector((state) => state.orderDetails);
-  const { loading: loadingDetails, error: errorDetails, order } = orderDetails;
-
-  console.log(orderDetails)
+    // const orderDetails = useSelector((state) => state.orderDetails);
+//   const { loading: loadingDetails, error: errorDetails, order } = orderDetails;
 
     useEffect(() => {
       if(userInfo && userInfo.isAdmin) {

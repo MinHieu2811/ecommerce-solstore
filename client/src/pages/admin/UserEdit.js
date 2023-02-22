@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Checkbox from "../../components/checkbox/CheckBox";
+// import Checkbox from "../../components/checkbox/CheckBox";
 import Helmet from "../../components/Helmet";
 import Loader from "../../components/Loader/Loader";
 import { USER_UPDATE_RESET } from "../../constants/userConstants";

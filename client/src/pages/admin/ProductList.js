@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -28,7 +29,7 @@ const ProductList = () => {
   } = productDelete;
 
   const productCreate = useSelector((state) => state.productCreate);
-  const {loading: loadingCreate, success: successCreate, error: errorCreate, product: createdProduct } = productCreate;
+  const {success: successCreate, product: createdProduct } = productCreate;
 
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET });
@@ -41,7 +42,7 @@ const ProductList = () => {
     } else {
       dispatch(getProducts(search.keyword, search.pageNumber, search.filter, search.sorting));
     }
-  }, [dispatch, navigate, userInfo, successDelete, search.keyword, search.pageNumber, search.filter, search.sorting]);
+  }, [userInfo, successDelete, search.keyword, search.pageNumber, search.filter, search.sorting, successCreate, createdProduct._id]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure")) {
@@ -51,7 +52,6 @@ const ProductList = () => {
   };
 
   const createProductHandler = () => {
-    console.log("create product");
     dispatch(createProduct())
   }
 

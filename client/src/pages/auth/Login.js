@@ -12,7 +12,6 @@ import Loader from "../../components/Loader/Loader";
 const SignIn = () => {
   const [email, setEmail] = useState("123@gmail.com");
   const [password, setPassword] = useState("abc123@");
-  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -23,12 +22,10 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setError("");
     try {
       dispatch(login(email, password));
     } catch (error) {
-      setError(error.message);
+      toast.error(error.toString())
     }
   };
 

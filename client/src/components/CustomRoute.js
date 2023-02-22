@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Routes, useLocation } from "react-router-dom";
 
 const CustomRoute = ({ children}) => {
-    const [progress, setProgress] = useState(false);
+    const [, setProgress] = useState(false);
     const [prevLocation, setPrevLocation] = useState("");
     const location = useLocation();
 

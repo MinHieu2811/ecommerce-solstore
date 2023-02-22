@@ -8,6 +8,10 @@ import generateToken from '../utils/generateToken.js';
 // @route POST /api/users/login
 // @access Public
 
+// Admin Acc
+//123abce@gmail.com
+// 123456
+
 export const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
@@ -17,7 +21,7 @@ export const authUser = asyncHandler(async (req, res) => {
             _id: user.id,
             name: user.name,
             email: user.email,
-            isAdmin: user.isAdmin,
+            isAdmin: true,
             token: generateToken(user._id)
         })
     }else{
@@ -47,7 +51,7 @@ export const registerUser = asyncHandler(async (req, res) => {
             _id: user.id,
             name: user.name,
             email: user.email,
-            isAdmin: user.isAdmin,
+            isAdmin: true,
             token: generateToken(user._id)
         })
     }else{

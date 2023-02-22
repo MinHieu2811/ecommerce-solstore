@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
@@ -36,7 +37,7 @@ const ProductPages = () => {
     productCreateReview;
 
   const addToWishList = useSelector(state => state.addToWishList);
-  const { success, loading: loadingWishList, error: errorWishList } = addToWishList;
+  const { success, error: errorWishList } = addToWishList;
 
   const handleExpand = () => {
     expandRef.current.classList.toggle("expand");
@@ -83,11 +84,11 @@ const ProductPages = () => {
     }else{
       toast.error(errorWishList);
     }
-  }, [success, toast, dispatch])
+  }, [success])
 
   const quantityHandler = useCallback(async (e) => {
     e.preventDefault();
-  });
+  }, []);
 
   const transformDate = (date) => {
     return date.split('-').reverse().join('/');

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -79,15 +80,7 @@ const Header = () => {
     {
       display: "wishlist",
       path: "/wishlist",
-    },
-    {
-      display: "blog",
-      path: "/blog",
-    },
-    {
-      display: "contact",
-      path: "/contact",
-    },
+    }
   ];
 
   const { pathname } = useLocation();

@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import React, { useEffect } from "react";
 import { randomProducts } from "../../actions/productActions";
 import "./heroSlider.scss";

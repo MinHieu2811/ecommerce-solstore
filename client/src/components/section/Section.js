@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import "./section.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,7 +50,7 @@ const Section = ({ title }) => {
     } else {
       toast.error(errorWishList);
     }
-  }, [success, toast, dispatch]);
+  }, [success]);
 
   const control = useAnimation();
   const [ref, inView] = useInView();

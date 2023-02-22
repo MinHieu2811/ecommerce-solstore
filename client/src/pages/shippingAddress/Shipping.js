@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +25,7 @@ const Shipping = () => {
   const { cartItems } = cart;
 
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { loading, success: successOrderCreate, order, error } = orderCreate;
+  const { loading, success: successOrderCreate, order } = orderCreate;
 
   const [name, setName] = useState(userInfo.name);
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -75,8 +76,6 @@ const Shipping = () => {
       })
     );
   };
-
-  console.log(successOrderCreate)
 
   useEffect(() => {
     if (successOrderCreate) {
@@ -152,14 +151,14 @@ const Shipping = () => {
                 <div className="form-wrapper_container_choice_item col-3">
                   <input
                     type="radio"
-                    id="delivery"
+                    id="paypal"
                     name="payment"
                     value={paymentMethod}
                     className="radio"
                     checked
                     onChange={(e) => setPaymentMethod(e.target.value)}
                   />
-                  <label htmlFor="delivery">Paypal</label>
+                  <label htmlFor="paypal">Paypal</label>
                 </div>
                 <div className="form-wrapper_container_choice_item col-3">
                   <input
